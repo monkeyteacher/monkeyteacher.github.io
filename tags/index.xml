@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 小P&#39;s Blog</title>
-    <link>https://your_domain.com/tags/</link>
+    <link>https://monkeyteacher.com/tags/</link>
     <description>Recent content in Tags on 小P&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>peter1180041@gmail.com (小P)</managingEditor>
     <webMaster>peter1180041@gmail.com (小P)</webMaster>
     <copyright>© 2025 小P</copyright>
-    <lastBuildDate>Tue, 11 Feb 2025 17:02:58 +0800</lastBuildDate><atom:link href="https://your_domain.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Feb 2025 17:02:58 +0800</lastBuildDate><atom:link href="https://monkeyteacher.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Jmeter</title>
-      <link>https://your_domain.com/tags/jmeter/</link>
+      <link>https://monkeyteacher.com/tags/jmeter/</link>
       <pubDate>Tue, 11 Feb 2025 17:02:58 +0800</pubDate>
       <author>peter1180041@gmail.com (小P)</author>
-      <guid>https://your_domain.com/tags/jmeter/</guid>
+      <guid>https://monkeyteacher.com/tags/jmeter/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Gar</title>
-      <link>https://your_domain.com/tags/gar/</link>
+      <link>https://monkeyteacher.com/tags/gar/</link>
       <pubDate>Sat, 08 Feb 2025 15:57:15 +0800</pubDate>
       <author>peter1180041@gmail.com (小P)</author>
-      <guid>https://your_domain.com/tags/gar/</guid>
+      <guid>https://monkeyteacher.com/tags/gar/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Gcp</title>
-      <link>https://your_domain.com/tags/gcp/</link>
+      <link>https://monkeyteacher.com/tags/gcp/</link>
       <pubDate>Sat, 08 Feb 2025 15:57:15 +0800</pubDate>
       <author>peter1180041@gmail.com (小P)</author>
-      <guid>https://your_domain.com/tags/gcp/</guid>
+      <guid>https://monkeyteacher.com/tags/gcp/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Gcr</title>
-      <link>https://your_domain.com/tags/gcr/</link>
+      <link>https://monkeyteacher.com/tags/gcr/</link>
       <pubDate>Sat, 08 Feb 2025 15:57:15 +0800</pubDate>
       <author>peter1180041@gmail.com (小P)</author>
-      <guid>https://your_domain.com/tags/gcr/</guid>
+      <guid>https://monkeyteacher.com/tags/gcr/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://your_domain.com/tags/docker/</link>
+      <link>https://monkeyteacher.com/tags/docker/</link>
       <pubDate>Tue, 21 Jan 2025 13:36:01 +0800</pubDate>
       <author>peter1180041@gmail.com (小P)</author>
-      <guid>https://your_domain.com/tags/docker/</guid>
+      <guid>https://monkeyteacher.com/tags/docker/</guid>
       <description></description>
       
     </item>

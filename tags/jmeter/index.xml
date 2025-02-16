@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jmeter on 小P&#39;s Blog</title>
-    <link>https://your_domain.com/tags/jmeter/</link>
+    <link>https://monkeyteacher.com/tags/jmeter/</link>
     <description>Recent content in Jmeter on 小P&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>peter1180041@gmail.com (小P)</managingEditor>
     <webMaster>peter1180041@gmail.com (小P)</webMaster>
     <copyright>© 2025 小P</copyright>
-    <lastBuildDate>Tue, 11 Feb 2025 17:02:58 +0800</lastBuildDate><atom:link href="https://your_domain.com/tags/jmeter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Feb 2025 17:02:58 +0800</lastBuildDate><atom:link href="https://monkeyteacher.com/tags/jmeter/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>JMeter 介紹及使用心得－壓測工具筆記</title>
-      <link>https://your_domain.com/posts/jmeter-intro/</link>
+      <link>https://monkeyteacher.com/posts/jmeter-intro/</link>
       <pubDate>Tue, 11 Feb 2025 17:02:58 +0800</pubDate>
       <author>peter1180041@gmail.com (小P)</author>
-      <guid>https://your_domain.com/posts/jmeter-intro/</guid>
+      <guid>https://monkeyteacher.com/posts/jmeter-intro/</guid>
       <description></description>
       
     </item>
