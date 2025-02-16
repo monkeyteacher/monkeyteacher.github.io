@@ -1075,20 +1075,64 @@ Thread Group 頁面如下：
     <div class="pt-3">
       <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
       <div class="pt-3">
-        <script src="https://giscus.app/client.js"
-        data-repo="monkeyteacher/blog-comment"
-        data-repo-id="R_kgDON5Fr_Q"
-        data-category="Announcements"
-        data-category-id="DIC_kwDON5Fr_c4Cm8FA"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="dark_high_contrast"
-        data-lang="zh-TW"
-        crossorigin="anonymous"
-        async>
+        <div id="giscus-container"></div>
+<script>
+	showComments();
+
+	const observer = new MutationObserver(() => {
+		const isDarkMode = document.documentElement.classList.contains("dark");
+		showComments();
+	});
+	
+	observer.observe(document.documentElement, {
+		attributes: true,
+		attributeFilter: ["class"] 
+	});
+
+	function showComments() {
+		const currentAppearance = localStorage.getItem('appearance') || 'auto';
+		if (currentAppearance === 'dark') {
+			reloadGiscus('dark_high_contrast');
+		} else {
+			reloadGiscus('light_high_contrast');
+		}
+	}
+	
+	function reloadGiscus(theme) {
+		
+		const giscusFrame = document.querySelector('iframe.giscus-frame');
+		if (giscusFrame) {
+			giscusFrame.remove();
+		}
+
+		
+		const oldScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+		if (oldScript) {
+			oldScript.remove();
+		}
+
+		
+		const newScript = document.createElement("script");
+		newScript.src = "https://giscus.app/client.js";
+		newScript.setAttribute("data-repo", "monkeyteacher/blog-comment");
+		newScript.setAttribute("data-repo-id", "R_kgDON5Fr_Q");
+		newScript.setAttribute("data-category", "Announcements");
+		newScript.setAttribute("data-category-id", "DIC_kwDON5Fr_c4Cm8FA");
+		newScript.setAttribute("data-mapping", "title");
+		newScript.setAttribute("data-strict", "0");
+		newScript.setAttribute("data-reactions-enabled", "1");
+		newScript.setAttribute("data-emit-metadata", "0");
+		newScript.setAttribute("data-input-position", "bottom");
+		newScript.setAttribute("data-theme", theme);  
+		newScript.setAttribute("data-lang", "zh-TW");
+		newScript.setAttribute("crossorigin", "anonymous");
+		newScript.async = true;
+
+		
+		document.getElementById("giscus-container").appendChild(newScript);
+	}
+
+
 </script>
       </div>
     </div>
