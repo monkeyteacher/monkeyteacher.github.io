@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>數據庫遷移：從 MySQL 到 MSSQL 的一步步指引 &middot; 小P&#39;s Blog</title>
-  <meta name="title" content="數據庫遷移：從 MySQL 到 MSSQL 的一步步指引 &middot; 小P&#39;s Blog" />
+  <title>Hugo 部落格之旅 - 第一站 : 建置靜態網站 &middot; 小P&#39;s Blog</title>
+  <meta name="title" content="Hugo 部落格之旅 - 第一站 : 建置靜態網站 &middot; 小P&#39;s Blog" />
   
   
   
   
   
-  <link rel="canonical" href="https://monkeyteacher.com/posts/mysql-to-mssql-step-by-step/" />
+  <link rel="canonical" href="https://monkeyteacher.com/posts/hugo-static-site/" />
   
   
   
@@ -64,18 +64,18 @@
   
   
   
-  <meta property="og:url" content="https://monkeyteacher.com/posts/mysql-to-mssql-step-by-step/">
+  <meta property="og:url" content="https://monkeyteacher.com/posts/hugo-static-site/">
   <meta property="og:site_name" content="小P&#39;s Blog">
-  <meta property="og:title" content="數據庫遷移：從 MySQL 到 MSSQL 的一步步指引">
+  <meta property="og:title" content="Hugo 部落格之旅 - 第一站 : 建置靜態網站">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-21T18:14:24+08:00">
-    <meta property="article:modified_time" content="2025-02-21T18:14:24+08:00">
+    <meta property="article:published_time" content="2025-02-22T00:51:28+08:00">
+    <meta property="article:modified_time" content="2025-02-22T00:51:28+08:00">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="數據庫遷移：從 MySQL 到 MSSQL 的一步步指引">
+  <meta name="twitter:title" content="Hugo 部落格之旅 - 第一站 : 建置靜態網站">
 
   
   <script type="application/ld+json">
@@ -83,26 +83,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "數據庫遷移：從 MySQL 到 MSSQL 的一步步指引",
-    "headline": "數據庫遷移：從 MySQL 到 MSSQL 的一步步指引",
+    "name": "Hugo 部落格之旅 - 第一站 : 建置靜態網站",
+    "headline": "Hugo 部落格之旅 - 第一站 : 建置靜態網站",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/monkeyteacher.com\/posts\/mysql-to-mssql-step-by-step\/",
+    "url" : "https:\/\/monkeyteacher.com\/posts\/hugo-static-site\/",
     "author" : {
       "@type": "Person",
       "name": "小P"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-02-21T18:14:24\u002b08:00",
-    "datePublished": "2025-02-21T18:14:24\u002b08:00",
+    "dateCreated": "2025-02-22T00:51:28\u002b08:00",
+    "datePublished": "2025-02-22T00:51:28\u002b08:00",
     
-    "dateModified": "2025-02-21T18:14:24\u002b08:00",
+    "dateModified": "2025-02-22T00:51:28\u002b08:00",
     
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "321"
+    "wordCount": "336"
   }]
   </script>
 
@@ -386,7 +386,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      數據庫遷移：從 MySQL 到 MSSQL 的一步步指引
+      Hugo 部落格之旅 - 第一站 : 建置靜態網站
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -431,7 +431,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-02-21T18:14:24&#43;08:00">21 February 2025</time><span class="px-2 text-primary-500">&middot;</span><span>321 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+  <time datetime="2025-02-22T00:51:28&#43;08:00">22 February 2025</time><span class="px-2 text-primary-500">&middot;</span><span>336 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
   
 
   
@@ -475,22 +475,26 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#安裝-ssma-for-mysql">安裝 SSMA for MySQL</a></li>
-    <li><a href="#安裝-mysql-drive">安裝 MySQL Drive</a></li>
-    <li><a href="#準備開始遷移">準備開始遷移</a>
+    <li><a href="#為什麼選擇-hugo">為什麼選擇 Hugo</a></li>
+    <li><a href="#hugo-簡介">Hugo 簡介</a></li>
+    <li><a href="#安裝-hugo">安裝 hugo</a>
       <ul>
-        <li><a href="#1-要先在-ssma-創建一個-proj">1. 要先在 SSMA 創建一個 proj</a></li>
-        <li><a href="#2-連結-mysql--ms-sql">2. 連結 MySQL &amp; MS SQL</a></li>
+        <li><a href="#前置">前置</a></li>
+        <li><a href="#homebrew">Homebrew</a></li>
       </ul>
     </li>
-    <li><a href="#產生簡報">產生簡報</a>
+    <li><a href="#簡單指令介紹">簡單指令介紹</a></li>
+    <li><a href="#簡單目錄介紹">簡單目錄介紹</a></li>
+    <li><a href="#開始撰寫部落格">開始撰寫部落格</a>
       <ul>
-        <li><a href="#以下為本次遇到的相關問題">以下為本次遇到的相關問題：</a></li>
+        <li><a href="#首先當然是先挑選一個順眼的主題">首先當然是先挑選一個順眼的主題</a></li>
+        <li><a href="#建置專案並匯入主題">建置專案並匯入主題</a></li>
+        <li><a href="#接下來就可以來設定基本資訊">接下來就可以來設定基本資訊</a></li>
+        <li><a href="#撰寫第一篇文章">撰寫第一篇文章</a></li>
+        <li><a href="#開啟伺服器來看看">開啟伺服器來看看</a></li>
+        <li><a href="#其他設定">其他設定</a></li>
       </ul>
     </li>
-    <li><a href="#創建-schema">創建 Schema</a></li>
-    <li><a href="#轉移資料庫">轉移資料庫</a></li>
-    <li><a href="#參考資料">參考資料：</a></li>
   </ul>
 </nav>
   </div>
@@ -504,22 +508,26 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#安裝-ssma-for-mysql">安裝 SSMA for MySQL</a></li>
-    <li><a href="#安裝-mysql-drive">安裝 MySQL Drive</a></li>
-    <li><a href="#準備開始遷移">準備開始遷移</a>
+    <li><a href="#為什麼選擇-hugo">為什麼選擇 Hugo</a></li>
+    <li><a href="#hugo-簡介">Hugo 簡介</a></li>
+    <li><a href="#安裝-hugo">安裝 hugo</a>
       <ul>
-        <li><a href="#1-要先在-ssma-創建一個-proj">1. 要先在 SSMA 創建一個 proj</a></li>
-        <li><a href="#2-連結-mysql--ms-sql">2. 連結 MySQL &amp; MS SQL</a></li>
+        <li><a href="#前置">前置</a></li>
+        <li><a href="#homebrew">Homebrew</a></li>
       </ul>
     </li>
-    <li><a href="#產生簡報">產生簡報</a>
+    <li><a href="#簡單指令介紹">簡單指令介紹</a></li>
+    <li><a href="#簡單目錄介紹">簡單目錄介紹</a></li>
+    <li><a href="#開始撰寫部落格">開始撰寫部落格</a>
       <ul>
-        <li><a href="#以下為本次遇到的相關問題">以下為本次遇到的相關問題：</a></li>
+        <li><a href="#首先當然是先挑選一個順眼的主題">首先當然是先挑選一個順眼的主題</a></li>
+        <li><a href="#建置專案並匯入主題">建置專案並匯入主題</a></li>
+        <li><a href="#接下來就可以來設定基本資訊">接下來就可以來設定基本資訊</a></li>
+        <li><a href="#撰寫第一篇文章">撰寫第一篇文章</a></li>
+        <li><a href="#開啟伺服器來看看">開啟伺服器來看看</a></li>
+        <li><a href="#其他設定">其他設定</a></li>
       </ul>
     </li>
-    <li><a href="#創建-schema">創建 Schema</a></li>
-    <li><a href="#轉移資料庫">轉移資料庫</a></li>
-    <li><a href="#參考資料">參考資料：</a></li>
   </ul>
 </nav>
   </div>
@@ -563,385 +571,362 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>最近有遇到一個需求那就是要將 MySQL 上的資料庫轉移到 MSSQL。<br>
-雖然同樣是 SQL 但兩者指令還是有差，很多用法在 MySQL 上可以用，但在 MSSQL 上卻不行。因此無法直接將 MySQL 資料庫匯出的 sql 檔匯入 MSSQL。</p>
-<p>以前都是匯出 sql 檔後再慢慢修，看哪邊需要調整就修哪邊，後來受到高人指點才知道原來 microsoft 有提供 MySQL 遷移至 MSSQL 的工具。<br>
-官方文件如下：<a href="https://learn.microsoft.com/en-us/sql/sql-server/migrate/guides/mysql-to-sql-server?view=sql-server-ver16" target="_blank">https://learn.microsoft.com/en-us/sql/sql-server/migrate/guides/mysql-to-sql-server?view=sql-server-ver16</a></p>
-<p>以下記錄我在進行 MySQL 遷移時的過程跟遇到的問題：</p>
+          <p>去年在工作上學習到很多技術，但一直沒有好好整理，在朋友的推薦下決定開始寫部落格，記錄一下學習心得。</p>
+<p>說到部落格就會想到 Blogger, Medium, WordPress 等平台，
+但身為一個工程師感覺就是要自己架設部落格，只是建置網站的成本很高，伺服器貴貴 QQ</p>
+<p>就找了一下看有甚麼方式可以花少少的錢錢就建置部落格，看了幾款開源的部落格專案後決定使用 Hugo + GitHub Page 來進行建置。<br>
+所以我們的部落格之旅的第一站就是<strong>如何用 hugo 建置靜態網站</strong>。</p>
 
 
-<h2 class="relative group">安裝 SSMA for MySQL 
-    <div id="%E5%AE%89%E8%A3%9D-ssma-for-mysql" class="anchor"></div>
+<h2 class="relative group">為什麼選擇 Hugo 
+    <div id="%E7%82%BA%E4%BB%80%E9%BA%BC%E9%81%B8%E6%93%87-hugo" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%AE%89%E8%A3%9D-ssma-for-mysql" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%81%B8%E6%93%87-hugo" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>SSMA 全名為 SQL Server Migration Assistant for MySQL，顧名思義就是用來協助將 MySQL 資料庫遷移至 MSSQL 的工具。<br>
-下載點：<a href="https://www.microsoft.com/en-us/download/details.aspx?id=54257" target="_blank">https://www.microsoft.com/en-us/download/details.aspx?id=54257</a><br>
-安裝完成後畫面截圖如下：<br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-APP_hu17562932006976093243.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-APP_hu17096147956116671896.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-APP_hu16270327849220196625.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-APP_hu7538879898414403958.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-APP_hu17096147956116671896.png"
-        alt="SSMA-APP.png"
-      />
-      
-    </figure>
-</p>
-
-
-<h2 class="relative group">安裝 MySQL Drive 
-    <div id="%E5%AE%89%E8%A3%9D-mysql-drive" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%AE%89%E8%A3%9D-mysql-drive" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>由於 SSMA 與 MySQL 進行連線時會需要用到 MySQL connect ODBC Driver<br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-mysql-drive_hu382048364875156129.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-mysql-drive_hu15575438634775595095.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-mysql-drive_hu12220017897969951412.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-mysql-drive_hu7467058495654359192.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-mysql-drive_hu15575438634775595095.png"
-        alt="SSMA-mysql-drive.png"
-      />
-      
-    </figure>
- <br>
-因此需要安裝 MySQL connect ODBC Driver。<br>
-官方載點：<a href="https://dev.mysql.com/downloads/connector/odbc/" target="_blank">https://dev.mysql.com/downloads/connector/odbc/</a></p>
-
-
-<h2 class="relative group">準備開始遷移 
-    <div id="%E6%BA%96%E5%82%99%E9%96%8B%E5%A7%8B%E9%81%B7%E7%A7%BB" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%BA%96%E5%82%99%E9%96%8B%E5%A7%8B%E9%81%B7%E7%A7%BB" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>開啟 SSMA，會看到上方為 MySQL Meta data 視窗，下面則是 SQL Server 視窗。<br>
-在還沒創建 proj 第二排功能鍵是不能按的。
-畫面如下：<br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-home_hu13168234531842221776.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-home_hu18278691857171023848.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-home_hu15295717420521220274.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-home_hu2904736407615871397.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-home_hu18278691857171023848.png"
-        alt="SSMA-home.png"
-      />
-      
-    </figure>
-</p>
-
-
-<h3 class="relative group">1. 要先在 SSMA 創建一個 proj 
-    <div id="1-%E8%A6%81%E5%85%88%E5%9C%A8-ssma-%E5%89%B5%E5%BB%BA%E4%B8%80%E5%80%8B-proj" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#1-%E8%A6%81%E5%85%88%E5%9C%A8-ssma-%E5%89%B5%E5%BB%BA%E4%B8%80%E5%80%8B-proj" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>點擊左上方 File 中的 <strong>New Project</strong> 來創建 proj，在創建時要先選擇要 Migrate 的 SQL Server 版本。<br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-select-mssql_hu3633753858011831763.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-select-mssql_hu2186575474073421825.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-select-mssql_hu14402606066886317937.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-select-mssql_hu1033791491966210832.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-select-mssql_hu2186575474073421825.png"
-        alt="SSMA-select-mssql.png"
-      />
-      
-    </figure>
-</p>
-
-
-<h3 class="relative group">2. 連結 MySQL &amp; MS SQL 
-    <div id="2-%E9%80%A3%E7%B5%90-mysql--ms-sql" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#2-%E9%80%A3%E7%B5%90-mysql--ms-sql" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>創建完後點擊 上方 Connect to MySQL 與 Connect to SQL Server，即可連接資料庫。  <br>
-其中在 MySQL 連結視窗中可以看到 Driver 的選項，如果這邊是空的代表你電腦裡沒有 MySQL connect ODBC Driver。<br>
-如果剛裝完還是沒有出現可以重啟電腦看看。<br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-connect-mysql_hu14887565023968133929.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-connect-mysql_hu18196630751967994815.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-connect-mysql_hu11851240541648726956.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-connect-mysql_hu1401822819387789293.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-connect-mysql_hu18196630751967994815.png"
-        alt="SSMA-connect-mysql.png"
-      />
-      
-    </figure>
- <br>
-連線完後會讓你選擇要載入哪個資料庫，這邊可以選擇自己想要匯入的資料庫。<br>
-載入完後在各自的 Meta data 視窗就可以看到資料庫選項。<br>
-如下圖：<br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-metadata-explorer_hu5941828025147119096.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-metadata-explorer_hu8797305454223672344.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-metadata-explorer_hu6049283982625589368.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-metadata-explorer_hu9970988268364719700.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-metadata-explorer_hu8797305454223672344.png"
-        alt="SSMA-metadata-explorer.png"
-      />
-      
-    </figure>
-</p>
-
-
-<h2 class="relative group">產生簡報 
-    <div id="%E7%94%A2%E7%94%9F%E7%B0%A1%E5%A0%B1" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E7%94%A2%E7%94%9F%E7%B0%A1%E5%A0%B1" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>在進行遷移之前 SSMA 有提供一個簡報功能，他會幫你製作轉移的分析報告，報告上會顯示哪邊轉移過去後會有問題。<br>
-在 MySQL Metadata 視窗選擇想要遷移的資料庫右鍵點擊 Create Report。 <br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-create-report_hu9849715710655521601.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-create-report_hu13522228686647960208.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-create-report_hu16996421923430515534.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-create-report_hu11760191666221080543.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-create-report_hu13522228686647960208.png"
-        alt="SSMA-create-report.png"
-      />
-      
-    </figure>
- <br>
-點擊創建報告後，他會產生一個報告網站，截圖如下：</p>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-summary-report_hu6710256207482293175.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-summary-report_hu11024131006480041784.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-summary-report_hu10781670231944173012.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-summary-report_hu753124065832832672.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-summary-report_hu11024131006480041784.png"
-        alt="SSMA-summary-report.png"
-      />
-      
-    </figure>
- <br>
-side bar 點開可以看到每一個 table 的 Schema<br>
-左方為 MySQL Schema 右方則為 MS SQL Schema，如果有出現 warning 與 error 訊息則會出現在 MSSQL 的視窗中。<br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-sql-report_hu12157319310271674066.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-sql-report_hu10259317301044058897.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-sql-report_hu15402980979473364177.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-sql-report_hu757265879304170699.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-sql-report_hu10259317301044058897.png"
-        alt="SSMA-sql-report.png"
-      />
-      
-    </figure>
- <br>
-可以先調整 MySQL 的 Schema 確認遷移都沒問題後，再進行轉移。</p>
-
-
-<h3 class="relative group">以下為本次遇到的相關問題： 
-    <div id="%E4%BB%A5%E4%B8%8B%E7%82%BA%E6%9C%AC%E6%AC%A1%E9%81%87%E5%88%B0%E7%9A%84%E7%9B%B8%E9%97%9C%E5%95%8F%E9%A1%8C" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BB%A5%E4%B8%8B%E7%82%BA%E6%9C%AC%E6%AC%A1%E9%81%87%E5%88%B0%E7%9A%84%E7%9B%B8%E9%97%9C%E5%95%8F%E9%A1%8C" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
+<p>在眾多靜態網站生成器中，我選擇 Hugo 的原因如下：</p>
 <ol>
-<li>Foreign keys with different types of columns and referenced columns can not be converted.<br>
-此問題主要的原因是在使用 Laravel 建置主 key 時是使用 UUID，而外 key 是 string (36)<br>
-導致 MySQL 的資料表主 key 會是 char(36)、外 key 是 varchar (36)，在 MySQL 中可以進行關聯，但在 MS SQL 中會發生錯誤。<br>
-解決方式：統一主 key 與外 key 的屬性就好。</li>
-<li>ON DELETE CASCADE|SET NULL|SET DEFAULT action was changed to NO ACTION to avoid multiple paths in cascaded foreign keys.<br>
-此問題是因為在某張資料表中同時有多個外 key 同時指向同一個父表， 再進行 ON DELETE 行為時有發生衝突。<br>
-解決方式：把 ON DELETE 行為改為 NO ACTION，也就是不執行任何動作，避免產生衝突。</li>
+<li>它是個靜態頁面產生器，目前市面上有許多架設靜態頁面的服務都是<strong>免費</strong>的，且 SEO 對靜態網站較為友善</li>
+<li>Hugo 是用 Golang 撰寫的，剛好符合我的學習規劃</li>
+<li>身邊有朋友在使用 Hugo，遇到問題可以互相討論</li>
 </ol>
 
 
-<h2 class="relative group">創建 Schema 
-    <div id="%E5%89%B5%E5%BB%BA-schema" class="anchor"></div>
+<h2 class="relative group">Hugo 簡介 
+    <div id="hugo-%E7%B0%A1%E4%BB%8B" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%89%B5%E5%BB%BA-schema" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#hugo-%E7%B0%A1%E4%BB%8B" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>確認完報表沒問題後，就可以來準備建置 schema。<br>
-首先要確認轉移的目標資料庫對不對，點擊要移轉的資料庫右方會出現 Schema Mapping
-一般來說 SQL Server 都是對應到 [資料庫].dbo，如下圖：</p>
 <p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-schema-mapping_hu10531192274789552870.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-schema-mapping_hu10089185829545197249.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-schema-mapping_hu17754414335055639041.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-schema-mapping_hu1682902940793386510.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-schema-mapping_hu10089185829545197249.png"
-        alt="SSMA-schema-mapping.png"
-      />
-      
-    </figure>
- <br>
-確認完對應的資料庫後，即可點擊上方的 <strong>Convert Schema</strong> ，這時候還不會在 MSSQL 建立資料表與 Schema，而是先產生在 SQL Server Metadata。<br>
-在 SQL Server Metadata 的視窗，對目標資料庫點擊右鍵，會發現 Synchronize with Database 選項。<br>
-點擊 Synchronize with Database 即可開始建立資料表與匯入 Schema，匯入完成後可以進到 SQL Server 進行確認。
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://gohugo.io/images/hugo-logo-wide.svg" alt="hugo-logo.png" />
+    
+  </figure>
+</p>
+<p>Hugo 是一個強大的靜態網站生成器，可以將 Markdown 檔案轉換成純靜態 HTML。
+截至 2025/01/21，在 GitHub 上已有 77.4k 星星，並支援 macOS、Linux、Windows 等各大平台。</p>
+<p>Hugo 最大的特點就是建置速度快，官方自豪地宣稱：</p>
+<blockquote>
+<p>The world&rsquo;s fastest framework for building websites</p>
+</blockquote>
+
+
+<h2 class="relative group">安裝 hugo 
+    <div id="%E5%AE%89%E8%A3%9D-hugo" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AE%89%E8%A3%9D-hugo" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>由於工作時是使用 mac，所以下面介紹 mac 的安裝方式。<br>
+官方有提供個平台多種安裝方式，可以去<a href="https://gohugo.io/installation/" target="_blank">官網</a>看看。</p>
+
+
+<h3 class="relative group">前置 
+    <div id="%E5%89%8D%E7%BD%AE" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%89%8D%E7%BD%AE" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>理論上如果沒有要自己 build，或是使用 hugo 的模組功能只要下載 git 就好。</p>
+
+
+<h3 class="relative group">Homebrew 
+    <div id="homebrew" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#homebrew" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<pre tabindex="0"><code>brew install hugo
+</code></pre><p>安裝完後可以使用以下指令查看有無成功。</p>
+<pre tabindex="0"><code>## 查看版本
+hugo version 
+
+## 應該會看到一下回應
+hugo v0.140.2+extended+withdeploy darwin/arm64 BuildDate=2024-12-30T15:01:53Z VendorInfo=brew
+</code></pre>
+
+<h2 class="relative group">簡單指令介紹 
+    <div id="%E7%B0%A1%E5%96%AE%E6%8C%87%E4%BB%A4%E4%BB%8B%E7%B4%B9" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%B0%A1%E5%96%AE%E6%8C%87%E4%BB%A4%E4%BB%8B%E7%B4%B9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>基本上要會用 hugo 只需要記四個指令就可以了。</p>
+<pre tabindex="0"><code>## 創建網站
+hugo new site [proj_name]
+
+## 建立新文章
+hugo new posts/[my-post].md
+
+## 開啟 local 伺服器, -D 顯示草稿
+hugo server
+hugo server -D  
+
+## 產生靜態頁面檔案
+hugo
+</code></pre>
+
+<h2 class="relative group">簡單目錄介紹 
+    <div id="%E7%B0%A1%E5%96%AE%E7%9B%AE%E9%8C%84%E4%BB%8B%E7%B4%B9" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%B0%A1%E5%96%AE%E7%9B%AE%E9%8C%84%E4%BB%8B%E7%B4%B9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>這邊簡單介紹一下目錄，建立新專案後目錄如下。<br>
 
     <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="images/hugo-directory-structure.png?width=100" alt="hugo-directory-structure.png" />
+      
+    </figure>
+
+基本上初學只要先知道幾個目錄就好：</p>
+<ul>
+<li>assets：放置靜態資源的地方 (images, css, js)。</li>
+<li>content：放置 md 檔的地方。</li>
+<li>themes：放置主題的地方。</li>
+<li>hugo.toml：設定檔。</li>
+<li>public： 靜態檔產生的目錄，一開始不會有。</li>
+</ul>
+
+
+<h2 class="relative group">開始撰寫部落格 
+    <div id="%E9%96%8B%E5%A7%8B%E6%92%B0%E5%AF%AB%E9%83%A8%E8%90%BD%E6%A0%BC" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%96%8B%E5%A7%8B%E6%92%B0%E5%AF%AB%E9%83%A8%E8%90%BD%E6%A0%BC" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>知道以上基本知識後就可以來撰寫部落格瞜。</p>
+
+
+<h3 class="relative group">首先當然是先挑選一個順眼的主題 
+    <div id="%E9%A6%96%E5%85%88%E7%95%B6%E7%84%B6%E6%98%AF%E5%85%88%E6%8C%91%E9%81%B8%E4%B8%80%E5%80%8B%E9%A0%86%E7%9C%BC%E7%9A%84%E4%B8%BB%E9%A1%8C" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%A6%96%E5%85%88%E7%95%B6%E7%84%B6%E6%98%AF%E5%85%88%E6%8C%91%E9%81%B8%E4%B8%80%E5%80%8B%E9%A0%86%E7%9C%BC%E7%9A%84%E4%B8%BB%E9%A1%8C" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>翻了一輪<a href="https://themes.gohugo.io/" target="_blank">官網</a>的主題後，挑了這個 blowfish 主題，<br>
+在眾多看起來蠻正式的部落格主題中出現一隻河豚，當然選他XD</p>
+
+
+<h3 class="relative group">建置專案並匯入主題 
+    <div id="%E5%BB%BA%E7%BD%AE%E5%B0%88%E6%A1%88%E4%B8%A6%E5%8C%AF%E5%85%A5%E4%B8%BB%E9%A1%8C" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%BB%BA%E7%BD%AE%E5%B0%88%E6%A1%88%E4%B8%A6%E5%8C%AF%E5%85%A5%E4%B8%BB%E9%A1%8C" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<pre tabindex="0"><code># 建置部落格專案
+hugo new site new_proj
+
+# git 初始化
+git init
+
+# 把 blowfish 的 Git 專案（子模組）加到你的專案裡
+git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
+
+# 刪除原本的設定檔
+rm hugo.toml
+
+# 把主題的設定目錄複製出來
+cp -r themes/blowfish/config/ config/
+</code></pre>
+
+<h3 class="relative group">接下來就可以來設定基本資訊 
+    <div id="%E6%8E%A5%E4%B8%8B%E4%BE%86%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BE%86%E8%A8%AD%E5%AE%9A%E5%9F%BA%E6%9C%AC%E8%B3%87%E8%A8%8A" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%8E%A5%E4%B8%8B%E4%BE%86%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BE%86%E8%A8%AD%E5%AE%9A%E5%9F%BA%E6%9C%AC%E8%B3%87%E8%A8%8A" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>這邊先貼一下<a href="https://blowfish.page/docs/getting-started/" target="_blank">官方的教學</a>。</p>
+<ul>
+<li>修改 config/_default/hugo.toml
+<pre tabindex="0"><code># theme 原本是註解的，拿掉＃即可
+theme = &#34;blowfish&#34;
+
+baseURL = &#34;https://your_domain.com/&#34;
+languageCode = &#34;en&#34;
+</code></pre></li>
+<li>修改 config/_default/languages.en.toml
+<pre tabindex="0"><code># 填寫 params.author 區塊，記得要把＃拿掉
+# image 圖像應放在 assets 中 (預設為河豚)
+[params.author]
+    name = &#34;小Ｐ&#34;
+    email = &#34;youremail@example.com&#34;
+    image = &#34;img/blowfish_logo.png&#34;
+    imageQuality = 96
+    headline = &#34;I&#39;m only human&#34;
+</code></pre></li>
+</ul>
+<p>設定完後就可以先開啟 local 伺服器來看看。</p>
+<pre tabindex="0"><code># hugo local server 預設 port 為 1313
+hugo server
+</code></pre><p>
+    <figure>
       <img
         class="my-0 rounded-md"
         loading="lazy"
         srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-synchronize-with-database_hu10609325384389306761.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-synchronize-with-database_hu15457508307049703910.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-synchronize-with-database_hu8102117039323898353.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-synchronize-with-database_hu5857663241303044984.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-synchronize-with-database_hu15457508307049703910.png"
-        alt="SSMA-synchronize-with-database.png"
+        /posts/hugo-static-site/images/hugo-init_hu1742114535347192756.png 330w,
+        /posts/hugo-static-site/images/hugo-init_hu14421459720618488530.png 660w,
+        /posts/hugo-static-site/images/hugo-init_hu7828946060397597418.png 1024w,
+        /posts/hugo-static-site/images/hugo-init_hu4167237268181900529.png 2x"
+        src="/posts/hugo-static-site/images/hugo-init_hu14421459720618488530.png"
+        alt="hugo-init.png"
       />
       
     </figure>
 </p>
 
 
-<h2 class="relative group">轉移資料庫 
-    <div id="%E8%BD%89%E7%A7%BB%E8%B3%87%E6%96%99%E5%BA%AB" class="anchor"></div>
+<h3 class="relative group">撰寫第一篇文章 
+    <div id="%E6%92%B0%E5%AF%AB%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%BD%89%E7%A7%BB%E8%B3%87%E6%96%99%E5%BA%AB" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%92%B0%E5%AF%AB%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0" aria-label="Anchor">#</a>
     </span>        
     
-</h2>
-<p>建立完資料表後就可以來進行最後的資料移轉。<br>
-在 MySQL Metadata 的視窗中對要移轉的資料庫右鍵點擊，會看到一個 Migrate Data 的選項。<br>
-點擊 Migrate Data 後會需要再次輸入 MySQL 與 MSSQL 的連線資訊，輸入後就會開始進行移轉。<br>
+</h3>
+<p>由於靜態檔案都會產生在 public 目錄。<br>
+在新增文章之前可以先新增 .gitignore，將 public 目錄排除。</p>
+<pre tabindex="0"><code>#.gitignore
+/public
+</code></pre><p>新增第一個 md 檔，他會放置在 content 目錄底下。</p>
+<pre tabindex="0"><code>hugo new posts/first-post.md
+</code></pre><p>每篇文章最上面都會有 Front matter，而文章內容是寫在下方。<br>
+如下</p>
+<pre tabindex="0"><code>+++
+date = &#39;2025-02-17T01:59:30+08:00&#39;
+draft = true
+title = &#39;First Post&#39;
++++
+
+## 歡迎來到我的 Hugo 網站 
+這是我的第一篇 Hugo 文章，我正在學習如何使用 Hugo 來建立靜態網站。
+</code></pre><p>Front matter 用來設定文章的 <strong>標題、日期、分類、標籤</strong> 等資訊。</p>
+
+
+<h3 class="relative group">開啟伺服器來看看 
+    <div id="%E9%96%8B%E5%95%9F%E4%BC%BA%E6%9C%8D%E5%99%A8%E4%BE%86%E7%9C%8B%E7%9C%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%96%8B%E5%95%9F%E4%BC%BA%E6%9C%8D%E5%99%A8%E4%BE%86%E7%9C%8B%E7%9C%8B" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>如果文章還是草稿模式 (draft = true) 記得開啟伺服器時要加 -D。<br>
+網址為：http://localhost:1313/posts/first-post</p>
+<pre tabindex="0"><code>hugo server -D
+</code></pre><p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/hugo-static-site/images/hugo-server-draft_hu9865422860350473278.png 330w,
+        /posts/hugo-static-site/images/hugo-server-draft_hu5071465479051068696.png 660w,
+        /posts/hugo-static-site/images/hugo-server-draft_hu14532433208336347722.png 1024w,
+        /posts/hugo-static-site/images/hugo-server-draft_hu9696347018097527491.png 2x"
+        src="/posts/hugo-static-site/images/hugo-server-draft_hu5071465479051068696.png"
+        alt="hugo-server-draft.png"
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">其他設定 
+    <div id="%E5%85%B6%E4%BB%96%E8%A8%AD%E5%AE%9A" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%85%B6%E4%BB%96%E8%A8%AD%E5%AE%9A" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>如果有在網站點過一輪會發現我們目前無法從 homepage 找到我們剛剛的文章，因此建議開啟兩個設定。</p>
+<ul>
+<li>開啟 menus
+<pre tabindex="0"><code># config/_default/menus.en.toml 
+# 打開註解即可
+[[main]]
+name = &#34;Blog&#34;
+pageRef = &#34;posts&#34;
+weight = 10
+</code></pre></li>
+<li>最近文章顯示首頁
+<pre tabindex="0"><code># config/_default/params.toml
+[homepage]
+showRecent = true
+cardView = true
+</code></pre></li>
+</ul>
+<p>設定完後畫面如下:<br>
 
     <figure>
       <img
         class="my-0 rounded-md"
         loading="lazy"
         srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-data_hu11298877313227381140.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-data_hu2510430522517399507.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-data_hu616419565931832596.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-data_hu1526344093423893022.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-data_hu2510430522517399507.png"
-        alt="SSMA-migrate-data.png"
+        /posts/hugo-static-site/images/hugo-success_hu15617074148301665175.png 330w,
+        /posts/hugo-static-site/images/hugo-success_hu1926699901573301810.png 660w,
+        /posts/hugo-static-site/images/hugo-success_hu8239403206314687434.png 1024w,
+        /posts/hugo-static-site/images/hugo-success_hu11582597311027903392.png 2x"
+        src="/posts/hugo-static-site/images/hugo-success_hu1926699901573301810.png"
+        alt="hugo-success.png"
       />
       
     </figure>
- <br>
-以下為轉完後的報告：
-如果 Success Rate 都是 100% 那就代表都有成功轉移。<br>
-
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-success_hu6128144534823767358.png 330w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-success_hu1937574688735122536.png 660w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-success_hu10558233478397565672.png 1024w,
-        /posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-success_hu2553011221390660498.png 2x"
-        src="/posts/mysql-to-mssql-step-by-step/images/SSMA-migrate-success_hu1937574688735122536.png"
-        alt="SSMA-migrate-success.png"
-      />
-      
-    </figure>
- <br>
-最後只要去 MSSQL 中確認資料有無都轉移成功即可大功告成。</p>
-
-
-<h2 class="relative group">參考資料： 
-    <div id="%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p><a href="https://learn.microsoft.com/zh-tw/sql/ssma/mysql/installing-ssma-for-mysql-client-mysqltosql?view=sql-server-ver16" target="_blank">https://learn.microsoft.com/zh-tw/sql/ssma/mysql/installing-ssma-for-mysql-client-mysqltosql?view=sql-server-ver16</a> <br>
-<a href="https://blog.miniasp.com/post/2014/12/24/SQL-Server-Migration-Assistant-for-MySQL-Tips" target="_blank">https://blog.miniasp.com/post/2014/12/24/SQL-Server-Migration-Assistant-for-MySQL-Tips</a> <br>
-<a href="https://ithelp.ithome.com.tw/articles/10322324?sc=rss.iron" target="_blank">https://ithelp.ithome.com.tw/articles/10322324?sc=rss.iron</a></p>
+</p>
+<p>看到這個地方就代表我們的靜態網站已經建置完成了！不過這只是開始而已，下一站將介紹如何把網站部署到 GitHub Pages，以及如何設定自己的網域。</p>
 
           
           
@@ -1064,8 +1049,8 @@ side bar 點開可以看到每一個 table 的 Schema<br>
           
         
       <script>
-        var oid = "views_posts\/mysql-to-mssql-step-by-step\/index.md"
-        var oid_likes = "likes_posts\/mysql-to-mssql-step-by-step\/index.md"
+        var oid = "views_posts\/hugo-static-site\/index.md"
+        var oid_likes = "likes_posts\/hugo-static-site\/index.md"
       </script>
       
       
@@ -1085,7 +1070,7 @@ side bar 點開可以看到每一個 table 的 Schema<br>
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/recommended-frame0-wireframe-tool/">
+            <a class="flex group mr-3" href="/posts/mysql-to-mssql-step-by-step/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1097,11 +1082,11 @@ side bar 點開可以看到每一個 table 的 Schema<br>
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >線框圖工具推薦 - frame0</span
+                  >數據庫遷移：從 MySQL 到 MSSQL 的一步步指引</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-02-19T00:04:05&#43;08:00">19 February 2025</time>
+                    <time datetime="2025-02-21T18:14:24&#43;08:00">21 February 2025</time>
                   
                 </span>
               </span>
@@ -1109,28 +1094,6 @@ side bar 點開可以看到每一個 table 的 Schema<br>
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/hugo-static-site/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Hugo 部落格之旅 - 第一站 : 建置靜態網站</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-02-22T00:51:28&#43;08:00">22 February 2025</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>

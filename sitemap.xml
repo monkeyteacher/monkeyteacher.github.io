@@ -3,14 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://monkeyteacher.com/posts/hugo-static-site/</loc>
+    <lastmod>2025-02-22T00:51:28+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://monkeyteacher.com/posts/</loc>
-    <lastmod>2025-02-21T18:14:24+08:00</lastmod>
+    <lastmod>2025-02-22T00:51:28+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://monkeyteacher.com/</loc>
-    <lastmod>2025-02-21T18:14:24+08:00</lastmod>
+    <lastmod>2025-02-22T00:51:28+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
