@@ -1,0 +1,21 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output
+dist/
+
+# Ignore git and CI
+.git/
+.github/
+
+# Ignore AI IDE settings
+.claude/
+.gemini/
+openspec/
+
+# Ignore env files
+.env
+.env.production
+
+# Ignore logs
+*.log
