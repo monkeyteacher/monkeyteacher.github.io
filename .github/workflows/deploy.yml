@@ -1,103 +1,103 @@
 name: Deploy to GitHub Pages
 
+# Triggers: auto-run on push to main, or manually via GitHub UI
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+# Permissions required for this pipeline
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read  # read repo source code
+  pages: write    # deploy to GitHub Pages
+  id-token: write # identity verification
 
+# If multiple pushes occur in quick succession, queue instead of cancelling
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
+  # Job 1: Code quality checks
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6  # pull repo code into the VM
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6  # install Node.js
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci  # strict install based on package-lock.json to ensure consistent versions
 
       - name: Check TypeScript & Astro
-        run: npm run astro check
+        run: npm run astro check  # TypeScript type checking
 
       - name: Lint Markdown
+        # || true means failure won't block subsequent jobs (warning mode)
         run: npx markdownlint-cli "src/data/blog/**/*.md" --config .markdownlintrc.json || true
 
+  # Job 2: Build static site (runs only after lint passes)
   build:
     name: Build
     runs-on: ubuntu-latest
-    needs: lint
+    needs: lint  # depends on lint job; skipped if lint fails
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
-
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build with Astro
         run: npm run build
-        env:
-          SITE: ${{ steps.pages.outputs.origin }}
 
       - name: Upload dist artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6  # archive dist/ for lighthouse job to download
         with:
           name: dist
           path: ./dist
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4  # separate archive for deploy job (different format)
         with:
           path: ./dist
 
+  # Job 3: Lighthouse performance quality gate (runs only after build passes)
   lighthouse:
     name: Lighthouse CI
     runs-on: ubuntu-latest
-    needs: build
+    needs: build  # depends on build job
     steps:
-      - uses: actions/checkout@v4
-
       - name: Download dist artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8  # reuse dist/ from build job, no redundant build
         with:
           name: dist
           path: ./dist
 
       - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v12
+        uses: treosh/lighthouse-ci-action@v12  # third-party action: runs performance/SEO/accessibility tests
         with:
-          configPath: .lighthouserc.json
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+          configPath: .lighthouserc.json  # thresholds: performance/SEO >= 90, accessibility >= 85
+          uploadArtifacts: true           # upload test report
+          temporaryPublicStorage: true    # store report in temporary public storage (free tier)
 
+  # Job 4: Deploy to GitHub Pages (runs only after lighthouse passes)
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    needs: lighthouse
+    needs: lighthouse  # depends on lighthouse job; blocked if scores are below threshold
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}  # display deployed URL after completion
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5  # deploy the Pages artifact uploaded by build job
