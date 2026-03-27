@@ -76,6 +76,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: build  # depends on build job
     steps:
+      - uses: actions/checkout@v6  # needed to access .lighthouserc.json config file
+
       - name: Download dist artifact
         uses: actions/download-artifact@v8  # reuse dist/ from build job, no redundant build
         with:
