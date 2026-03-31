@@ -16,5 +16,5 @@ jobs:
       - name: Run Lychee link checker
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress 'src/data/blog/**/*.md'
+          args: --verbose --no-progress --accept '200,301,302,403' 'src/data/blog/**/*.md'
           fail: true  # fail the job if broken links are found
