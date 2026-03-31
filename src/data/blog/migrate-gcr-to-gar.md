@@ -4,7 +4,7 @@ author: 小P
 pubDatetime: 2025-02-08T00:00:00+08:00
 slug: migrate-gcr-to-gar
 featured: false
-draft: false
+draft: true
 tags:
   - gcp
   - gcr

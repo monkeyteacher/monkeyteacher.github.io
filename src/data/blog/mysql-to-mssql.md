@@ -4,7 +4,7 @@ author: 小P
 pubDatetime: 2025-02-21T00:00:00+08:00
 slug: mysql-to-mssql-step-by-step
 featured: false
-draft: false
+draft: true
 tags:
   - database
   - mysql
