@@ -14,17 +14,17 @@ description: ""
 ---
 
 ## 背景
-去年年初的時候有試著使用 hugo 建置部落格，但後來工作繁忙就停更了。
-最近剛好有時間可以來進行整理，卻發現原本的 hugo 專案好像不見了...
-由於 github 上面只有保留靜態頁面的輸出內容，所以乾脆直接重建一個。
+去年年初的時候有試著使用 hugo 建置部落格，但後來工作繁忙就停更了。  
+最近剛好有時間可以來進行整理，卻發現原本的 hugo 專案好像不見了...  
+由於 github 上面只有保留靜態頁面的輸出內容，所以乾脆直接重建一個。  
 
 
 ## 事前評估
-在開始重建前有稍微評估是否要繼續使用 hugo，還是改用其他套部落格的套件。
-在上一份工作有稍微玩過 Astro ，體驗其實還不錯，再加上他不像是 hugo 是原始碼和輸出分開管理。
+在開始重建前有稍微評估是否要繼續使用 hugo，還是改用其他套部落格的套件。  
+在上一份工作有稍微玩過 Astro ，體驗其實還不錯，再加上他不像是 hugo 是原始碼和輸出分開管理。  
 只需要管理一個專案就好，所以不會遇到跟這次一樣原碼不見的問題XD
 
-另外目前有再練習 devops 相關技能，在規畫時有加入 Github Action 的流程，來建立簡單的 CI/CD 機制。
+另外目前有再練習 devops 相關技能，在規畫時有加入 Github Action 的流程，來建立簡單的 CI/CD 機制。  
 原本 Astro 就由提供 Github Action 相關範例，所以很適合作練習。
 
 ## 遷移過程
@@ -39,7 +39,7 @@ npm create astro@latest  -- --template satnaing/astro-paper
 ```
 ### 目錄架構
 
-第一步當然是先從目錄架構開始，要先知道基礎設定要在哪個檔案，文章的 markdown 要放在哪。
+第一步當然是先從目錄架構開始，要先知道基礎設定要在哪個檔案，文章的 markdown 要放在哪。  
 基本上我們撰寫的程式碼都是在 src 目錄裡面，而 astro-paper 樣板的目錄如下：
 
 ```
@@ -93,8 +93,8 @@ npm create astro@latest  -- --template satnaing/astro-paper
 
 ## DevOps 實踐：CI/CD Pipeline
 
-本次重建還有一個重點是實作 CI/CD 流程，這個專案是預計部屬在 github page 上面。
-astro 官方有直接提供簡易的 [workflow](https://docs.astro.build/zh-tw/guides/deploy/github/) 可以將專案部屬到 GitHub Page。
+本次重建還有一個重點是實作 CI/CD 流程，這個專案是預計部屬在 github page 上面。  
+astro 官方有直接提供簡易的 [workflow](https://docs.astro.build/zh-tw/guides/deploy/github/) 可以將專案部屬到 GitHub Page。  
 但我這邊想要練習基本 github action，所以沒有直接使用官方的範例。
 
 ### CI/CD Pipeline 
